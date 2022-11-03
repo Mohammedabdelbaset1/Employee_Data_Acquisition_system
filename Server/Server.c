@@ -11,37 +11,37 @@ EN_Operation_Status Add_Employee(ST_linkedList_t* L)
     if( Employee_Title(&employee)!= PASS)
     {
         Error = Adding_newEmployee_Failed;
-        printf("ADDING NEW EMPLOYEE FAIL\a");
+        printf("ADDING NEW EMPLOYEE FAIL\a\n");
         return Error;
     }
     if(Employee_Name(&employee)!= PASS)
     {
         Error = Adding_newEmployee_Failed;
-        printf("ADDING NEW EMPLOYEE FAIL\a");
+        printf("ADDING NEW EMPLOYEE FAIL\a\n");
         return Error;
     }
     if(Employee_Id(&employee,L)!= PASS)
     {
         Error = Adding_newEmployee_Failed;
-        printf("ADDING NEW EMPLOYEE FAIL\a");
+        printf("ADDING NEW EMPLOYEE FAIL\a\n");
         return Error;
     }
     if(Employee_Age(&employee)!= PASS)
     {
         Error = Adding_newEmployee_Failed;
-        printf("ADDING NEW EMPLOYEE FAIL\a");
+        printf("ADDING NEW EMPLOYEE FAIL\a\n");
         return Error;
     }
     if(Employee_Salary(&employee)!= PASS)
     {
         Error = Adding_newEmployee_Failed;
-        printf("ADDING NEW EMPLOYEE FAIL\a");
+        printf("ADDING NEW EMPLOYEE FAIL\a\n");
         return Error;
     }
      if( DLL_Append_Node(L,employee)!= LL_OK)
     {
         Error = Adding_newEmployee_Failed;
-        printf("ADDING NEW EMPLOYEE FAIL\a");
+        printf("ADDING NEW EMPLOYEE FAIL\a\n");
         return Error;
     }
     
@@ -125,7 +125,7 @@ EN_Operation_Status Display_All_Employees(ST_linkedList_t* L)
     (DLL_Diplay(L)!= LL_OK)?(Error = DISPLAY_ALL_FAILED):(Error = Successed);
     if(Error == DISPLAY_ALL_FAILED)
     {
-        printf("FAIL TO DISPLAY ALL EMPLOTEES\n");
+        printf("FAIL TO DISPLAY ALL EMPLOYEES OR LIST MAYBE EMPTY\a\n");
     }
     return Error;
 }
@@ -139,7 +139,7 @@ EN_Operation_Status Display_Specific_Employee(ST_linkedList_t* L)
     fflush(stdin);
    if( DLL_Print_Specific_Employee(L,Val_ID) == NULL)
    {
-        printf("Employee Data Not found\n");
+        printf("Employee Data Not found\a\n");
         Error = DISPLAY_SPACIFIC_FAILED;
         return Error;
    }
